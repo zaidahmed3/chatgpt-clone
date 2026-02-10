@@ -5,9 +5,140 @@
   font-family: Arial, sans-serif;
 }
 
-body {
-  background: #121425;
-  height: 100vh;
+body{
+  background-color: #121212;
+  color: #fff;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app{
+  width: 90%;
+  max-width: 500px;
+height: 90vh;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+   box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.chat-area {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  animation: fadeIn 0.3s ease;
+}
+
+
+
+
+.message.user {
+  align-self: flex-end;
+  background-color: #4e94ff;
+}
+
+.message.ai {
+  align-self: flex-start;
+  background-color: #333;
+}
+.welcome h1{
+  text-align: center;
+  color: #aaa;
+  margin-top: 20px;
+}
+.time {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+#userInput{
+  flex: 1;
+  padding: 2px;
+  border-radius: 14px;
+  resize: none;
+  border:none ;
+  outline: none;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 14px;
+
+}
+.input-container {
+  display: flex;
+  padding: 6px;
+  background-color: #272626;
+}
+button{
+  margin-left: 10px ;
+  padding: 0 6px;
+  background-color: #292b2e;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(228, 223, 223);
+
+}
+
+button:hover{
+  background-color: #464343;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.typing {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+
+@media (max-width: 800px) {
+  .app {
+    height: 95vh;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  textarea {
+    font-size: 11px;
+  }
 }
